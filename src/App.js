@@ -2,7 +2,7 @@ import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import { Switch, Route } from 'react-router-dom'
 
-import { SimpleApp, Layout, NotFound, Loading, Error, useCurrentUser } from '@webonyx/react-atlas'
+import { SimpleApp, Layout, PageNotFound, Loading, Error, useCurrentUser } from '@webonyx/react-atlas'
 
 import theme from './theme'
 import typePolicies from './graphql/typePolicies'
@@ -65,7 +65,7 @@ function AppUI() {
         <Route path="/" exact>
           HOME
         </Route>
-        <Route component={NotFound} />
+        <Route component={PageNotFound} />
       </Switch>
     </>
   )
@@ -82,7 +82,7 @@ function App() {
 
   return (
     <SimpleApp theme={theme} typePolicies={typePolicies}>
-      <Layout publicRoutes={publicRoutes}>
+      <Layout publicRoutes={publicRoutes} app="CDO">
         <AppUI />
       </Layout>
     </SimpleApp>

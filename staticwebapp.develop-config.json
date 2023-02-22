@@ -5,7 +5,7 @@
   "routes": [
     {
       "route": "/dev*",
-      "rewrite": "/"
+      "rewrite": "/*"
     }
   ]
 }

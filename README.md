@@ -26,9 +26,19 @@ Sample repo to demonstrate Azure Pipeline setup for react-atlas app and deploy t
    4. `.env.main`
    5. Prefer to files in this example repo
 4. Create Static Web App **react-atlas-sample** in Azure Portal. Link to created project repos. A Pipeline will be created automatically during the Static Web App creation. The first Pipeline job would fail due to missing configs
+
+<img width="755" alt="Screenshot 2023-02-22 at 22 15 03" src="https://user-images.githubusercontent.com/1311422/220665901-60d899c9-3d86-4847-9472-a6c5d63b69be.png">
+
 5. Add build secrets: Update Pipeline > Library > Variable Group to add more secrets as environment variables. There is a **Variable Group** created after Static Web App creation.  Add more environments to it: `FONTAWESOME_TOKEN` and `GITHUB_TOKEN`. Contact Jared for these environment values.
+
+<img width="790" alt="Screenshot 2023-02-22 at 22 16 50" src="https://user-images.githubusercontent.com/1311422/220666399-1bc0ccb3-a9a1-488e-ab5d-e16e79294173.png">
+
 6. Update Pipeline yaml in repository to reflect example file in this repo. Mostly about updating environment variables and build command
+
+<img width="1121" alt="Screenshot 2023-02-22 at 22 19 26" src="https://user-images.githubusercontent.com/1311422/220667164-dd5a3a82-95c3-42de-ae38-b80250584749.png">
+
 7. Update repository env files (`.env.main` for prod and `.env.develop` for test), mostly about `PUBLIC_URL` and `REACT_APP_OAUTH_CLIENT_ID`
+
 
 Extra steps needed for **test** environment since its public url is non-root url. We need a reverse proxy in front of Static Web App and strip the prefix before forwarding requests to it. That reverse proxy will be used is Azure Front Door CDN.
 

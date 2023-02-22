@@ -42,6 +42,18 @@ Sample repo to demonstrate Azure Pipeline setup for react-atlas app and deploy t
 
 Extra steps needed for **test** environment since its public url is non-root url. We need a reverse proxy in front of Static Web App and strip the prefix before forwarding requests to it. That reverse proxy will be used is Azure Front Door CDN.
 
-1. Create an Azure Front Door instance, choose `Custom` for Origin type, input Static Web App `develop` environment hostname as origin hostname
+1. Create an Azure Front Door instance, choose `Custom` for Origin type, input Static Web App `develop` environment hostname as Endpoint hostname
+
+<img width="745" alt="Screenshot 2023-02-22 at 22 25 57" src="https://user-images.githubusercontent.com/1311422/220670949-d6011fd4-1831-4092-a448-a41f04497861.png">
+
 2. Add a rule set `stripdevprefix` to remove the `/dev` prefix.
+
+<img width="984" alt="Screenshot 2023-02-22 at 20 35 25" src="https://user-images.githubusercontent.com/1311422/220671074-4bb74bba-0408-41bb-afa3-213f3a7333c5.png">
+
 3. Update default route to attach `stripdevprefix` rule set and set `/` for **Origin path**.
+
+<img width="847" alt="Screenshot 2023-02-22 at 22 31 47" src="https://user-images.githubusercontent.com/1311422/220671519-5703c12d-f977-4413-b9a0-06894570cb19.png">
+
+**Notes:**
+
+* Do not enable CDN caching if public url come from external system such as **atlast.att.com** from **Cloudfront**

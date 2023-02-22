@@ -24,12 +24,12 @@ Sample repo to demonstrate Azure Pipeline setup for react-atlas app and deploy t
    2. `staticwebapp.config.json`
    3. `.env.develop`
    4. `.env.main`
-   5. Prefer to files in this example repo
+   5. Refer to files in this example repo
 4. Create Static Web App **react-atlas-sample** in Azure Portal. Link to created project repos. A Pipeline will be created automatically during the Static Web App creation. The first Pipeline job would fail due to missing configs
 
 <img width="755" alt="Screenshot 2023-02-22 at 22 15 03" src="https://user-images.githubusercontent.com/1311422/220665901-60d899c9-3d86-4847-9472-a6c5d63b69be.png">
 
-5. Add build secrets: Update Pipeline > Library > Variable Group to add more secrets as environment variables. There is a **Variable Group** created after Static Web App creation.  Add more environments to it: `FONTAWESOME_TOKEN` and `GITHUB_TOKEN`. Contact Jared for these environment values.
+5. Add build secrets: Update Pipeline > Library > Variable Group to add more secrets as environment variables. There is a **Variable Group** created after Static Web App creation.  Add more environments to it: `FONTAWESOME_TOKEN` and `GITHUB_TOKEN`. Contact **Jared** for these environment values.
 
 <img width="790" alt="Screenshot 2023-02-22 at 22 16 50" src="https://user-images.githubusercontent.com/1311422/220666399-1bc0ccb3-a9a1-488e-ab5d-e16e79294173.png">
 
@@ -42,7 +42,7 @@ Sample repo to demonstrate Azure Pipeline setup for react-atlas app and deploy t
 
 Extra steps needed for **test** environment since its public url is non-root url. We need a reverse proxy in front of Static Web App and strip the prefix before forwarding requests to it. That reverse proxy will be used is Azure Front Door CDN.
 
-1. Create an Azure Front Door instance, choose `Custom` for Origin type, input Static Web App `develop` environment hostname as Endpoint hostname
+1. Create an Azure Front Door instance, choose `Custom` for **Origin type**, input Static Web App `develop` environment hostname to **Origin hostname**
 
 <img width="745" alt="Screenshot 2023-02-22 at 22 25 57" src="https://user-images.githubusercontent.com/1311422/220670949-d6011fd4-1831-4092-a448-a41f04497861.png">
 

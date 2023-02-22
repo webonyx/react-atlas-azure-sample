@@ -1,0 +1,14 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[{*.js, *.jsx}]
+ij_javascript_use_semicolon_after_statement = false
+ij_javascript_comma_on_new_line = true
+ij_javascript_enforce_trailing_comma = keep

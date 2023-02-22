@@ -1,0 +1,20 @@
+{
+  "name": "atlas-aiaas",
+  "regions": [
+    "us-east-1"
+  ],
+  "lambda": {
+    "memory": 128
+  },
+  "type": "static",
+  "static": {
+    "dir": "build",
+    "prefix": "aiaas"
+  },
+  "redirects": {
+    "/*": {
+      "location": "/",
+      "status": 200
+    }
+  }
+}

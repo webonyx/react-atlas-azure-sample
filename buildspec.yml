@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            nodejs: 12
+    build:
+        commands:
+            - yarn install
+            - cp .env.${APP_ENV} .env.production.local
+            - yarn run build
+            - export APP_PATH=$(cat up.json | jq -r '.static.prefix')
+            - curl -sf https://raw.githubusercontent.com/webonyx/up/master/install.sh | sh
+            - git init # fix git information retrieval error
+            - up deploy ${APP_ENV} --no-build
+            - aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths /${APP_PATH}*

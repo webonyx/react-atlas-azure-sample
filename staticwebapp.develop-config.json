@@ -4,7 +4,7 @@
   },
   "routes": [
     {
-      "route": "/app",
+      "route": "/dev*",
       "rewrite": "/"
     }
   ]

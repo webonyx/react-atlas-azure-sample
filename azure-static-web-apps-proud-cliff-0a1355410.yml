@@ -16,7 +16,7 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   variables:
-  - group: Azure-Static-Web-Apps-proud-cliff-0a1355410-variable-group
+  - group: Azure-Static-Web-Apps-proud-cliff-0a1355410-variable-group # Ensure this variable group has envs set: FONTAWESOME_TOKEN, GITHUB_TOKEN
   steps:
   - checkout: self
     submodules: true
